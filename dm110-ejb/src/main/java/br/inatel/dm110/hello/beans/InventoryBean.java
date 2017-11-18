@@ -21,12 +21,12 @@ import javax.ejb.Stateless;
 public class InventoryBean implements InventoryLocal, InventoryRemote {
 
 	@EJB
-	private CustomerDAO productDAO;
+	private CustomerDAO customerDAO;
 	
 	@Override
-	public List<String> listProductNames() {
+	public List<String> listCustomerNames() {
 		// TODO Auto-generated method stub
-		return productDAO.listAll().stream().map(Customer::getNome).collect(Collectors.toList());
+		return customerDAO.listAll().stream().map(Customer::getNome).collect(Collectors.toList());
 	}
 
 	@Override
@@ -35,7 +35,7 @@ public class InventoryBean implements InventoryLocal, InventoryRemote {
 		product.setNome(name);
 		product.setEmail(email);
 		product.setEndereco(endereco);
-		productDAO.insert(product);
+		customerDAO.insert(product);
 		
 	}
 

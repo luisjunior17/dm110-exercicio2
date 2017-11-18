@@ -16,7 +16,7 @@ public class InventoryServiceImpl implements InventoryService {
 	@Override
 	public List<String> listAllCustomer() {
 		// TODO Auto-generated method stub
-		return inventoryBean.listProductNames();
+		return inventoryBean.listCustomerNames();
 	}
 
 	@Override
@@ -25,5 +25,4 @@ public class InventoryServiceImpl implements InventoryService {
 		
 	}
 	
-
 }
